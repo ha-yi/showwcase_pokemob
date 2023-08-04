@@ -7,7 +7,6 @@ class LoginScreen extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    //login screen with email and password. a login button at bottom of it, when pressing it changes into loading state if the controller.loginModel.isLoading is true
     return Material(
       child: Container(
         color: Colors.white,
