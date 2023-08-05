@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:showwcase_pokemob/app/locale/keys.locale.dart';
+import 'package:showwcase_pokemob/features/home/home.controller.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends GetView<HomeController> {
   final _scrollController = ScrollController();
 
   HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // scaffold with image app bar expandable, with infinite scroll list view that fetch data before it reach bottom.
     return Scaffold(
       body: CustomScrollView(
         controller: _scrollController,
@@ -15,9 +17,9 @@ class HomeScreen extends StatelessWidget {
           SliverAppBar(
             expandedHeight: 200,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text('The Pokemon'),
+              title: Text(Words.homeTitle.tr),
               background: Image.asset(
-                'assets\img\appbar.jpg',
+                'assets/img/appbar.jpg',
                 fit: BoxFit.cover,
               ),
             ),
