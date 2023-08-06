@@ -17,7 +17,7 @@ class DetailScreen extends GetView<DetailController> {
     return Scaffold(
       appBar: AppBar(title: Text(data.name ?? '-')),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(24),
+        padding: const EdgeInsets.all(24),
         child: Column(
           children: [
             Card(

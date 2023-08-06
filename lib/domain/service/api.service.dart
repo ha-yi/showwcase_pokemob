@@ -13,11 +13,11 @@ class PokemonService extends GetxService {
     return await _api.getPokemons(url);
   }
 
-  Future<Pokemon?> getPokemon(String url) async {
-    var tmp = _cache.get(url);
+  Future<Pokemon?> getPokemon(String? url) async {
+    var tmp = _cache.get(url ?? '');
     if (tmp != null) return Pokemon.fromJson(tmp);
 
-    var res = await _api.getPokemon(url);
+    var res = await _api.getPokemon(url ?? '');
     if (res == null) return null;
     return Pokemon.fromJson(res);
   }
