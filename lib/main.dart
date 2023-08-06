@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:showwcase_pokemob/app/app.routes.dart';
 import 'package:showwcase_pokemob/app/locale/translation.locale.dart';
+import 'package:showwcase_pokemob/domain/repository/api.repository.dart';
+import 'package:showwcase_pokemob/domain/repository/storage.repository.dart';
 import 'package:showwcase_pokemob/domain/service/api.service.dart';
 
 void main() async {
@@ -10,7 +12,11 @@ void main() async {
 }
 
 initServices() async {
-  Get.put(ApiService());
+  var storage = Get.put(StorageRepository());
+  await storage.initialize();
+  Get.put(ApiRepository());
+
+  Get.put(PokemonService());
 }
 
 class MyApp extends StatelessWidget {

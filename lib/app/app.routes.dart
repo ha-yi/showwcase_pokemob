@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:showwcase_pokemob/features/details/detail.binder.dart';
 import 'package:showwcase_pokemob/features/details/detail.screen.dart';
 import 'package:showwcase_pokemob/features/home/home.binder.dart';
 import 'package:showwcase_pokemob/features/home/home.screen.dart';
@@ -8,25 +9,31 @@ import 'package:showwcase_pokemob/features/splash/splash.binder.dart';
 import 'package:showwcase_pokemob/features/splash/splash.screen.dart';
 
 class AppPages {
+  static const splash = '/splash';
+  static const login = '/login';
+  static const home = '/home';
+  static const details = '/details';
+
   static final pages = [
     GetPage(
-      name: '/splash',
+      name: splash,
       page: () => const SplashScreen(),
       binding: SplashBinder(),
     ),
     GetPage(
-      name: '/login',
+      name: login,
       page: () => const LoginScreen(),
       binding: LoginBinder(),
     ),
     GetPage(
-      name: '/home',
+      name: home,
       page: () => HomeScreen(),
       binding: HomeBinder(),
     ),
     GetPage(
-      name: '/details',
+      name: details,
       page: () => const DetailScreen(),
+      binding: DetailBinder(),
     )
   ];
 }
